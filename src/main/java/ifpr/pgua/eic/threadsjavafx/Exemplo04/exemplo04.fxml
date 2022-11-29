@@ -25,6 +25,6 @@
 
     <Label fx:id="lbStatus" text="Not started..." />
     <TextArea fx:id="taContent"/>
-    <ProgressBar fx:id="pbProgresso" progress="0"/>
+    <ProgressBar fx:id="pbProgresso" progress="0"/> <!-- barra de progresso -->
     <TextField fx:id="tfStatus"/>
 </VBox>

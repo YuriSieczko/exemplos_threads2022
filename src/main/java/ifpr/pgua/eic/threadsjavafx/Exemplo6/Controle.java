@@ -20,7 +20,7 @@ public class Controle {
     @FXML
     private TextField tfLista;
 
-    private DateTimeFormatter df=DateTimeFormatter.ofPattern("HH:mm:ss");
+    private DateTimeFormatter df=DateTimeFormatter.ofPattern("HH:mm:ss");//formata a hora
     private GeradorLista geradorLista;
 
     public void initialize(){
@@ -65,6 +65,10 @@ public class Controle {
             protected Void call() throws Exception{
                 while(true){
                     Thread.sleep(1000);
+                    Platform.runLater(()->{
+                        tfLista.setText("Criando Lista");//mostra msg na tela de carregamento;
+                    });
+
                     geradorLista.novaLista();
                     Platform.runLater(()->{
                         tfLista.setText(geradorLista.getLista().toString());

@@ -34,11 +34,11 @@ public class Controle {
     {
 
 
-        Task<Void> task = runTask();
+        Task<Void> task = runTask(); // quando uma task for demorada
 
 
-        pbProgresso.progressProperty().bind(task.progressProperty());
-        lbStatus.textProperty().bind(task.messageProperty());
+        pbProgresso.progressProperty().bind(task.progressProperty()); //quanto de processo
+        lbStatus.textProperty().bind(task.messageProperty()); //msg do progresso
         tfStatus.textProperty().bind(task.messageProperty());
 
 
@@ -62,12 +62,13 @@ public class Controle {
                         // Get the Status
                         final String status = "Processing " + i + " of " + 10;
 
-                        this.updateProgress(i,10);
-                        this.updateMessage(status);
+                        this.updateProgress(i,10); // qual progresso, o maximo de progresso
+                        this.updateMessage(status); // mensagem
+                        // ambas atualizar o status de progresso
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
-                                taContent.appendText(status+"\n");
+                                taContent.appendText(status+"\n"); // atualiza o text area;
                             }
                         });
                         Thread.sleep(1000);

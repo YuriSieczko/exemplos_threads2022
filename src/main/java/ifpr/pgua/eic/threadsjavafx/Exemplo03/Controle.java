@@ -65,6 +65,13 @@ public class Controle {
 
                     }
                 });
+                // outra forma de fazer lanbda expression
+                // Platform.runLater(() -> {
+                //     lbStatus.setText(status);
+
+                //     taContent.appendText(status+"\n");
+
+                // });
 
                 Thread.sleep(1000);
             }
